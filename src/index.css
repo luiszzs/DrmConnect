@@ -109,3 +109,19 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
+
+.perguntas{
+  text-align: center;
+  margin: 10px 0px;
+  padding: 10px;
+  border: 2px solid blue;
+}
+
+.resps{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 5px;
+  border: 2px solid yellow;
+}

@@ -22,9 +22,9 @@ export default function RespostasProblemas({ id }){
         buscarRespostasProblemas()
     }, [id])
     return(
-        <div>
+        <div className="resps">
             {respostas.map((item, index) => (
-                respostas.length <= 0 ? <p>não há soluções</p> : <Resposta key={index} resp={item.description} />
+                respostas.length <= 0 ? <p>não há soluções</p> : <ul><Resposta key={index} resp={item.description} /></ul>
             ))}
             <EnviarResposta id={id} novaRes={buscarRespostasProblemas}/>
         </div>

@@ -52,14 +52,14 @@ export default function App(){
       <h1>Bem-vindo aos problemas.com</h1>
       <p>encontre a solução aq!!!!</p>
       <div>
-        <input type="text" onChange={e => setNome(e.target.value)} />
-        <input type="text" onChange={e => setTitulo(e.target.value)} />
-        <textarea onChange={e => setDescricao(e.target.value)}></textarea>
+        <input type="text" onChange={e => setNome(e.target.value)} placeholder="Nome De Usuário"/> <br />
+        <input type="text" onChange={e => setTitulo(e.target.value)} placeholder="Titulo"/> <br />
+        <textarea onChange={e => setDescricao(e.target.value)} placeholder="Descrição do Problema"></textarea> <br />
         <button onClick={criarProblema}>postar</button>
       </div>
 
       {problemas.map((item, index) =>(
-        <div key={index}>
+        <div key={index} className="perguntas">
         <Problemas user={item.user} titulo={item.titulo} conteudo={item.description}/> <br />
         <RespostasProblemas id={item.id} /> 
         </div>
