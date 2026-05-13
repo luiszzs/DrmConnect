@@ -25,6 +25,11 @@ export default function App(){
   }
 
   async function criarProblema() {
+    if(titulo == "" || descricao == ""){
+      alert("escreva algo")
+      return
+    }
+
     try{
       let imgUrlLocal = await envImagensStorage(img)
       const res = await supabase
