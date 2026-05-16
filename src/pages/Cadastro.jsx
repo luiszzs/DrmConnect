@@ -9,7 +9,6 @@ export default function Cadastro(){
         provider: "google",
         options: {
             redirectTo: `${window.location.origin}/home`,
-            scopes: 'https://www.googleapis.com/auth/userinfo.email',
             queryParams: {
             access_type: 'offline',
             prompt: 'consent',

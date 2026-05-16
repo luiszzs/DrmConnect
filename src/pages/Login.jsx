@@ -22,7 +22,6 @@ export default function Login(){
         const { error } = await supabase.auth.signInWithOAuth({
         provider: "google",
         options: {
-            scopes: 'https://www.googleapis.com/auth/userinfo.email',
             redirectTo: `${window.location.origin}/home`,
             queryParams: {
             access_type: 'offline',
