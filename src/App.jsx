@@ -5,7 +5,7 @@ import Login from "./pages/Login";
 import Cadastro from "./pages/Cadastro";
 import PrivateRoute from "./components/hooks/PrivateRouter";
 import ProblemasPagina from "./pages/ProblemasPagina";
-import PaginaDeUsuario from "./pages/paginaDeUsuario";
+import PaginaDeUsuario from "./pages/PaginaDeUsuario";
 
 export default function App(){
   const [user, setUser] = useState(null);
