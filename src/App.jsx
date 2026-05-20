@@ -5,6 +5,8 @@ import Login from "./pages/Login";
 import Cadastro from "./pages/Cadastro";
 import PrivateRoute from "./components/hooks/PrivateRouter";
 import ProblemasPagina from "./pages/ProblemasPagina";
+import PaginaDeUsuario from "./pages/paginaDeUsuario";
+
 export default function App(){
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true); // Adicionado para controlar o carregamento inicial
@@ -54,6 +56,11 @@ export default function App(){
             </PrivateRoute>
           } 
         />
+        <Route path="/home/seuUser" element={
+          <PrivateRoute user={user} loading={loading}>
+            <PaginaDeUsuario />
+          </PrivateRoute>
+        }/>
       </Routes>
     </BrowserRouter>
   );
