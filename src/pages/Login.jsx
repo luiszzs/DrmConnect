@@ -3,9 +3,11 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
 export default function Login(){
+    const [ email, setEmail ] = useState("")
+    const [ senha, setSenha ] = useState("")
     const irPara = useNavigate()
 
-/*     async function logar() {
+     async function logar() {
         const res = await supabase.auth.signInWithPassword({
             email,
             password: senha
@@ -16,7 +18,7 @@ export default function Login(){
             alert("login feito!")
             irPara("/Home")
         }
-    } */
+    }
 
     const handleOAuthLogin = async () => {
         const { error } = await supabase.auth.signInWithOAuth({
@@ -38,10 +40,9 @@ export default function Login(){
             <p>encontre sua solução aqui</p>
 
             <div className="form-login">
-{/*                <input type="text" onChange={e => setEmail(e.target.value)} />
-           <input type="password" onChange={e => setSenha(e.target.value)} />
+                <input type="text" onChange={e => setEmail(e.target.value)} />
+                <input type="password" onChange={e => setSenha(e.target.value)} />
               <button onClick={logar}>Logar</button> <br />
-    */}
                 <button onClick={handleOAuthLogin}>Entrar com o google</button> <br />
                 <p>Não tem conta? crie!</p>
                 <button onClick={() => irPara("/cadastro")}>Cadastrar</button>
