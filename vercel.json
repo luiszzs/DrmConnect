@@ -1,7 +1,8 @@
 {
-  "redirects": [
+  "rewrites": [
     {
-      "source": "/((?!manutencao.html).*)"
+      "source": "/((?!manutencao.html|_next/static|favicon.ico).*)",
+      "destination": "/manutencao.html"
     }
   ]
 }
