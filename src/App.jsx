@@ -7,6 +7,7 @@ import PrivateRoute from "./components/hooks/PrivateRouter";
 import ProblemasPagina from "./pages/ProblemasPagina";
 import PaginaDeUsuario from "./pages/PaginaDeUsuario";
 import FeedBack from "./pages/FeedBack";
+import ResetSenha from "./pages/ResetSenha";
 
 export default function App(){
   const [user, setUser] = useState(null);
@@ -52,6 +53,7 @@ export default function App(){
           </div>
         ): user ? (<Navigate to={'/home'} replace />) : (<Login />)} />
         <Route path="/cadastro" element={<Cadastro />} />
+        <Route path="resetSenha" element={<ResetSenha />} />
         <Route 
           path="/home" 
           element={

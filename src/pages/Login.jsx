@@ -34,18 +34,35 @@ export default function Login(){
         if (error) toast.error(error.message);
     };
 
+    async function resetSenha() {
+        if(email == " " || email == ""){
+            alert("insira seu email!")
+            return
+        }
+        const res = await supabase.auth.resetPasswordForEmail(email, {
+            redirectTo: 'https://problemas.vercel.app/resetSenha'
+        })
+        if(res.error){
+            alert("Algo deu errado, verifique se inseriu o email corretamente!")
+        } else{
+            alert("vá no email e mude sua senha")   
+        }
+    }
+
     return(
         <div className="login-tudo">
             <h1>Bem-vindo ao Problemas.com</h1>
             <p>encontre sua solução aqui</p>
 
             <div className="form-login">
-                <input type="text" onChange={e => setEmail(e.target.value)} />
-                <input type="password" onChange={e => setSenha(e.target.value)} />
+                <input type="text" onChange={e => setEmail(e.target.value)} placeholder="Insira seu email"/><br />
+                <input type="password" onChange={e => setSenha(e.target.value)} placeholder="Insira sua senha"/> <br />
               <button onClick={logar}>Logar</button> <br />
                 <button onClick={handleOAuthLogin}>Entrar com o google</button> <br />
                 <p>Não tem conta? crie!</p>
-                <button onClick={() => irPara("/cadastro")}>Cadastrar</button>
+                <button onClick={() => irPara("/cadastro")}>Cadastrar</button> 
+                <p>Esqueceu sua senha? redefinar</p>
+                <button onClick={() => resetSenha()}>Redefinir senha</button>
             </div>
         </div>
     )
