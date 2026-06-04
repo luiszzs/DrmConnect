@@ -2,7 +2,7 @@ import Descricao from "./elements/Descricao";
 import Titulo from "./elements/Titulo";
 import '../../styles/postCard.css'
 
-export default function Problemas({ user, titulo, conteudo, imgs, avatar }){
+export default function PostComunidade({ user, titulo, conteudo, imgs, avatar }){
     return(
         <div className="content-post">
             <div className="cabeca-post">

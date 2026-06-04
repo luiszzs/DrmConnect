@@ -1,16 +1,16 @@
 import { useEffect, useState, useRef } from "react";
 import { supabase } from "../supabase/supabase";
-import Problemas from "../components/Problemas";
-import RespostasProblemas from "../components/RespostasProblemas";
 import { envImagensStorage } from "../services/uploadImages";
 import { useNavigate } from "react-router-dom";
 import iconImagem from "./../assets/iconImagem.png"
 import "./../styles/formPost.css"
 import { buscarImagem } from "../services/sercheAvatar";
+import PostComunidade from "../components/PostComunidade";
+import PostRespostas from "../components/PostRespostas";
 
 /* ESSA É A PAGINA DE COMUNIDADE */
-export default function ProblemasPagina(){
-  const [ problemas, setProblemas ] = useState([])
+export default function Home(){
+  const [ posts, setPosts ] = useState([])
   // acima, o estado onde amazena os objetos do posts vindo do banca 
   const [ descricao, setDescricao ] = useState("")
   // acima, o estado, para a descricao do post
@@ -31,7 +31,7 @@ export default function ProblemasPagina(){
   */
   const irPara = useNavigate()
 
-   async function buscarProblemas(estaPagina){
+   async function buscarPosts(estaPagina){
     setCarregamento(true)
     /* Quando ele receber a pagina atual (quantos post devem aparecer) ele faz a seguite conta,
     a pagina atual * 10, para saber onde o banco deve começar a puxa, e o começo + 10 - 1, onde resultará no numero onde ele deve puxar
@@ -57,7 +57,7 @@ export default function ProblemasPagina(){
         setTemMais(false)
       }
       // filtra posts, para evitar post repetitos
-      setProblemas((postAnteriores) => {
+      setPosts((postAnteriores) => {
         // ele analise os post existente no estado, e ao puxar os novos, se vinher algum repetito (verificado atravez do id) ele tirar o obj
         const postFiltro = res.data.filter(
           (novoPost) => !postAnteriores.some((postAntigo) => postAntigo.id === novoPost.id)
@@ -72,7 +72,7 @@ export default function ProblemasPagina(){
     const res = supabase.auth.signOut()
   }
 // função para criar post
-  async function criarProblema() {
+  async function criarPost() {
     if(descricao == ""){
       alert("escreva algo")
       return
@@ -101,7 +101,7 @@ export default function ProblemasPagina(){
       .select()
       // quando ele inserir o novo post, ele ja puxa para exibir na tela
       if(!res.error && res.data){
-        setProblemas((postAnteriores) => [res.data[0], ...postAnteriores])
+        setPosts((postAnteriores) => [res.data[0], ...postAnteriores])
         // limpa inputs
         setImg(null)
         setDescricao("")
@@ -121,7 +121,7 @@ export default function ProblemasPagina(){
   }
 
   useEffect(() => {
-    buscarProblemas(pagina)
+    buscarPosts(pagina)
     // pega a foto de usuario para exibir para o proprio user
     async function carregarUrlAvatar() {
       const url = await buscarImagem()
@@ -159,15 +159,15 @@ export default function ProblemasPagina(){
         <div className="form-envio">
           <input type="file" accept="image/png,image/jpeg" onChange={e => setImg(e.target.files[0])} id="input-file" style={{display: "none"}}/>
           <label htmlFor="input-file"><img src={iconImagem} alt="Icon de imagem" style={{width: "30px", height: "30px", cursor: "pointer"}}/></label>  
-          <button onClick={criarProblema}>postar</button>
+          <button onClick={criarPost}>postar</button>
         </div>
 
       </div>
 
-      {problemas.map((item, index) =>(
+      {posts.map((item, index) =>(
         <div key={index} className="perguntas">
-        <Problemas user={item.user} titulo={item.titulo} conteudo={item.description} imgs={item.imagens} avatar={item.avatar}/> <br />
-        <RespostasProblemas id={item.id} curtida={item.curtidas}/> 
+        <PostComunidade user={item.user} titulo={item.titulo} conteudo={item.description} imgs={item.imagens} avatar={item.avatar}/> <br />
+        <PostRespostas id={item.id} curtida={item.curtidas}/> 
         </div>
       ))}
 

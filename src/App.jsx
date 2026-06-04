@@ -4,7 +4,7 @@ import { supabase } from "./supabase/supabase";
 import Login from "./pages/Login";
 import Cadastro from "./pages/Cadastro";
 import PrivateRoute from "./components/hooks/PrivateRouter";
-import ProblemasPagina from "./pages/ProblemasPagina";
+import Home from "./pages/Home";
 import PaginaDeUsuario from "./pages/PaginaDeUsuario";
 import FeedBack from "./pages/FeedBack";
 import ResetSenha from "./pages/ResetSenha";
@@ -64,7 +64,7 @@ export default function App(){
           element={
             // Passamos o loading para o PrivateRoute não barrar o usuário antes da hora
             <PrivateRoute user={user} loading={loading}>
-              <ProblemasPagina />
+              <Home />
             </PrivateRoute>
           } 
         />
