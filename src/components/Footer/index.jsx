@@ -1,33 +1,40 @@
-import logoEp from "./../../assets/paginaInicial/patriocinadores/logoEP.png"
 import instagram from "./../../assets/paginaInicial/socialMedias/Instagram_logo.png"
 import tiktok from "./../../assets/paginaInicial/socialMedias/tiktok_logo.png"
-import animeProfile from "./../../assets/paginaInicial/patriocinadores/animeprofile.png"
+import animeProfile from "./../../assets/paginaInicial/patriocinadores/animeprofile.png";
+import logoEp from "./../../assets/paginaInicial/patriocinadores/logoEP.png";
 import "./footer.css"
 
-export default function Footer(){
-    return(
-        <footer>
-            <div className="criadores">
-                <img src={logoEp} className="logoEp" alt="logo da ep"/>
-                <p>EEEP Deputado Roberto Mesquita</p>
-                <p>Feito por: 2°Desenvolvimentos de Sistemas</p>
-            </div>
-            <div className="mediasSociais">
-                <h3>Redes sociais</h3>
-                <div className="icones">
-                    <a href="https://www.instagram.com/2anodesenv.sistemas/" target="_blank">
-                        <img src={instagram} className="logoInsta" alt="logo do instagram"/>
-                    </a>
-                    <a href="https://www.tiktok.com/@segundo.ds2025" target="_blank">
-                        <img src={tiktok} className="logoTTK" alt="logo do tiktok"/>
-                    </a>
+export default function Footer() {
+    return (
+        <footer className="footer">
+            <div className="redesSociais">
+                <h3>DRM Connect</h3>
+
+                <div className="social">
+                    <a href="https://www.instagram.com/2anodesenv.sistemas/" target="_blank"><img src={instagram} alt="Instagram" /></a>
+                    <a href="https://www.tiktok.com/@segundo.ds2025" target="_blank"><img src={tiktok} alt="TikTok" /></a>
                 </div>
+            </div>
+
+            <div className="suporte">
+                <h3>Suporte</h3>
+                <a href="#">Política de Privacidade</a>
+                <a href="#">Termos de Uso</a>
+                <a href="#">Fale Conosco</a>
+            </div>
+
+            <div className="sobre-nos">
+                <h3>Sobre nós</h3>
+                <p>
+                    Conectando aprendizado, inovação e evolução em uma única plataforma.
+                </p>
             </div>
             <div className="patriocinadores">
                 <h3>Patriocinadores</h3>
-                <a href="https://animeprofile.com.br/"  target="_blank">
-                    <img src={animeProfile} className="logoAP" alt="logo do anime profile" />
-                </a>
+                <div className="patriocinadoresIcon">
+                    <a  href="https://animeprofile.com.br/" target="_blank"><img src={animeProfile} alt="anime Profile" /></a>
+                    <a href="https://www.instagram.com/eeepdeputadorobertomesquita/" target="_blank"><img src={logoEp} alt="logoEp DRM" /></a>
+                </div>
             </div>
         </footer>
     )

@@ -1,7 +1,7 @@
 .inicial-tudo{
-    background: #020024;
-    background: linear-gradient(90deg, #020024 0%, #090979 100%, #00d4ff 35%);
+    background-color: #050922;
     color: white;
+    width: 100%;
 }
 
 .navbar{
@@ -23,24 +23,53 @@
     gap: 15px;
 }
 
-.login{
-    background-color: #100b76;
-    height: 40px;
-    width: 100px;
-    border-radius: 5px;
-    border: none;
-    
+.login {
+    width: 110px;
+    height: 45px;
+    border: 1px solid rgba(0, 180, 255, 0.4);
+    border-radius: 10px;
+    background: linear-gradient(145deg, #08121f, #0b1b33);
+    color: #cfe9ff;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 140, 255, 0.2);
 }
 
-.login span{
-    font-size: 18px;
-    font-weight: 600;
-    font-family: 'poppins', 'ubuntu', sans-serif;
-    background: #007bff;
-    background: linear-gradient(90deg, #007bff 0%, #00bbff 30%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.login::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(0, 200, 255, 0.3),
+        transparent
+    );
+    transition: 0.5s;
 }
+
+.login:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(0, 180, 255, 0.6);
+    border-color: rgba(0, 200, 255, 0.8);
+}
+
+.login:hover::before {
+    left: 100%;
+}
+
+.login:active {
+    transform: scale(0.98);
+}
+
 
 .cadastro{
     height: 40px;
@@ -53,6 +82,13 @@
     background: linear-gradient(90deg, #007bff 0%, #00bbff 30%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.cadastro :hover{
+    background: #0039757a;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
 }
 
 .nome-logo{
@@ -95,7 +131,7 @@ header{
     background-repeat: no-repeat;
     
 
-    height: 450px;
+    height: 100vh;
 
 }
 
@@ -148,6 +184,21 @@ header{
     font-family: 'poppins', 'ubuntu', sans-serif;
 }
 
+.comecar {
+    position: relative;
+    height: 50px;
+    width: 250px;
+    font-size: 18px;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 0 8px rgba(0, 151, 206, 0.6);
+    font-family: 'poppins', 'ubuntu', sans-serif;
+    transition: 0.3s ease;
+}
+
 .comecar::before {
     content: "";
     position: absolute;
@@ -157,14 +208,148 @@ header{
 
     background: linear-gradient(
         90deg,
-        #0061c8 0%,
-        #00bbff 30%
+        #0061c8,
+        #00bbff,
+        #0061c8
     );
+
+    background-size: 200% 200%;
+    animation: borderMove 3s linear infinite;
 
     -webkit-mask:
         linear-gradient(#fff 0 0) content-box,
         linear-gradient(#fff 0 0);
-
     -webkit-mask-composite: xor;
     mask-composite: exclude;
+}
+
+.comecar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 187, 255, 0.8);
+}
+
+@keyframes borderMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.subHeader{
+    margin: 70px 0 70px 0;
+}
+
+.subHeader h2{
+    font-weight: 500;
+    font-size: 45px;
+    word-spacing: 200px;
+}
+
+.oque-pode-fazer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 0 80px 0px;
+}
+
+.linha{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.tituloCard{
+    font-size: 12px;
+    text-align: center;
+    font-weight: 400;
+
+    background: #ffffff;
+    background: linear-gradient(90deg, #ffffff 0%, #006f97 30%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    text-shadow: 0 0 3px #ffffff;
+}
+
+.texto{
+    font-size: 14px;
+    font-weight: 400;
+    word-spacing: 0px;
+    line-height: 15px;
+    text-align: center;
+    padding: 0px 5px 0 5px;
+}
+
+.imagemCard img{
+    height: 80px;
+}
+
+.imagemCard{
+    display: flex;
+    align-items: center;
+}
+
+.textoCard{
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 5px;
+    height: 250px;
+    width: 230px;
+
+    background: rgba(10, 20, 40, 0.35);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(0, 180, 255, 0.25);
+    border-radius: 12px;
+
+    box-shadow: 0 0 15px rgba(0, 150, 255, 0.15);
+}
+
+.card::before {
+    content: "";
+    width: 180px;
+    height: 180px;
+    background: radial-gradient(
+        circle,
+        rgba(0, 180, 255, 0.35),
+        transparent 70%
+    );
+    top: -40px;
+    left: -40px;
+    filter: blur(10px);
+    z-index: 0;
+}
+
+.card::after {
+    content: "";
+    width: 160px;
+    height: 160px;
+    background: radial-gradient(
+        circle,
+        rgba(120, 80, 255, 0.25),
+        transparent 70%
+    );
+    bottom: -50px;
+    right: -50px;
+    filter: blur(12px);
+    z-index: 0;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(0, 180, 255, 0.3);
+    transition: 0.3s ease;
 }

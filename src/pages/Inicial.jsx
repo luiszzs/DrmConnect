@@ -50,16 +50,35 @@ export default function  Inicial(){
                 </div>
             </header>
             <div className="subHeader">
-                <h2>
-                    Aprenda, colabore e evolua em uma comunidade criada para impulsionar seu conhecimento.
-                    No nosso site você pode fazer perguntas e receber repostas de outros alunos, para ajudar
-                    você a aprimorar seu conhecimento e resolver suas advercidades
-                </h2>
+                <marquee direction="left" behavior="alternate" scrollamount="5">
+                    <h2>
+                        Aprendizado  Inovação  Capacidade  Evolução
+                        Aprendizado  Inovação  Capacidade  Evolução
+                        Aprendizado  Inovação  Capacidade  Evolução
+                        Aprendizado  Inovação  Capacidade  Evolução
+                        Aprendizado  Inovação  Capacidade  Evolução
+                    </h2>
+                </marquee>
+                <marquee direction="right" behavior="alternate" scrollamount="5">
+                    <h2>
+                        Desenvolvimento Tecnologia Educação Ensino
+                        Desenvolvimento Tecnologia Educação Ensino
+                        Desenvolvimento Tecnologia Educação Ensino
+                        Desenvolvimento Tecnologia Educação Ensino
+                        Desenvolvimento Tecnologia Educação Ensino
+                    </h2>
+                </marquee>
+                <marquee direction="left" behavior="alternate" scrollamount="5">
+                    <h2>
+                        Criatividade Potencial Conectar Capacitar
+                        Criatividade Potencial Conectar Capacitar
+                        Criatividade Potencial Conectar Capacitar
+                        Criatividade Potencial Conectar Capacitar
+                        Criatividade Potencial Conectar Capacitar
+                    </h2>
+                </marquee>        
             </div>
             <div className="oque-pode-fazer">
-                <div>
-                    <h2>O que você pode fazer?</h2>
-                </div>
                 <div className="linha">
                     <InicialCard
                         imagem={perguntar}
