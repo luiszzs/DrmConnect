@@ -19,6 +19,12 @@
     margin-bottom: 50px;
     margin-left: 200px;
     margin-right: 200px;
+    border: white solid;
+}
+
+.enviar-pergunta > button {
+    margin-left: 200px;
+    margin-right: 200px;
 }
 
 .perguntas {
@@ -27,6 +33,10 @@
     justify-content: space-between;
     margin-left: 200px;
     margin-right: 200px;
+}
+
+hr {
+    width: 90%;
 }
 
 .perguntas > a {
@@ -38,5 +48,5 @@
 
 .perguntas > a:hover {
     background-color: rgba(54, 43, 151, 0.295);
-    transition: ease-out 0.7s; 
+    transition: ease-out 0.4s; 
 }

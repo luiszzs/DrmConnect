@@ -68,6 +68,7 @@ export default function AjudaDrm(){
                     to={`/perguntas/${item.id}`}
                     key={item.id}>
                         <Pergunta titulo={item.titulo} user={item.user_nome} userAvatar={item.user_avatar}/>
+                        <hr />
                     </Link>
                 ))}
             </div>
