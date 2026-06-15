@@ -107,6 +107,11 @@
     
 }
 
+.imagembackground > img{
+    width: 650px;
+    height: 650px;
+}
+
 .logoIcone{
     height: 70px;
     width: 70px;
