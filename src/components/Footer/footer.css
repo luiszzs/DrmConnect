@@ -40,6 +40,7 @@
 
 .social img {
     width: 32px;
+    height: 32px;
     border-radius: 3px;
     transition: 0.3s;
     cursor: pointer;
