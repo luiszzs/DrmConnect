@@ -18,20 +18,19 @@
 .barraLogo > img {
     width: 60px;
     height: 60px;
-
 }
 
 .barraEsquerda {
     width: 15%;
     margin-top: 20px;
-    color: white;
+    margin-right: 5px;
 }
 
 .barraDireita {
     width: 15%;
     margin-top: 20px;
-    color: white;
-    border: none;
+    margin-left: 5px;
+    border: none; 
 }
 
 .criarPergunta > h1 {
@@ -52,9 +51,10 @@
     margin-left: 400px;
     margin-right: 400px;
     margin-bottom: 50px;
-    padding-bottom: 20px;
-    padding-top: 5px;
+    width: 40%;
+    height: 8%;
     padding-left: 10px;
+    padding-right: 10px;
     background-color: rgba(22, 25, 78, 0.466);
     border-radius: 10px;
     border: none 1px;
@@ -79,6 +79,10 @@
     background-color: rgba(22, 25, 78, 0.466);
     border: 1px none;
     border-radius: 20px;
+}
+
+.criarPergunta-entrada > textarea::placeholder {
+    color: white;
 }
 
 .criarPergunta-entrada > textarea:focus {
