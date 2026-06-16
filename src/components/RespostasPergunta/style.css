@@ -1,22 +1,30 @@
 .respostas-enviar {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     margin-top: 30px
 }
 
 .respostas-enviar input {
+    display: flex;
     border-radius: 10px;
-    padding-right: 700px;
-    padding-bottom: 30px;
-    padding-top: 30px;
+    height: 80px;
+    width: 700px;
+    padding-left: 20px;
+    background-color: rgba(22, 25, 78, 0.466);
+    border: none;
+    color: white;
 }
 
 
+ 
 .respostas-enviar button {
     border-radius: 20px;
     margin-top: 20px;
     padding-top: 15px;
     padding-bottom: 15px;
     padding-left: 30px;
-    padding-right: 30px
+    padding-right: 30px;
+    background: linear-gradient(1turn, #7c3aed, #06b6d4);
+    border: none;
 }
