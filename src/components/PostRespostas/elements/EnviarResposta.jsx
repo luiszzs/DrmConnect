@@ -42,7 +42,7 @@ export default function EnviarResposta({ idP, novaRes, quantidadeDeCurtidas }){
         }
         const nomeDeUsuario = user.user_metadata?.full_name || user.user_metadata?.name ||  user.user_metadata?.display_name || "??"
         const res = await supabase
-        .from(import.meta.env.TABELA_2)
+        .from('post_respostas')
         .insert({
             id_post: idP,
             description,
@@ -52,7 +52,6 @@ export default function EnviarResposta({ idP, novaRes, quantidadeDeCurtidas }){
         if(res.error){
             console.log(res.error)
         } else{
-            alert("deu bom")
             novaRes()
             setDescription('')
         }

@@ -33,7 +33,6 @@ export default function CriarPergunta(){
         })
         if(res.error) return console.error(res.error.message);
         // se a pergunta for criada, ele volta para a aba perguntas/ajuda drm
-        alert("pergunta Criada!")
         irPara("/perguntas")
     }
     // mesmo sitema usado no ProblemasPagina.jsx (explicação mais detalhada la)
@@ -49,7 +48,15 @@ export default function CriarPergunta(){
         <div className="criarPergunta">
                 <h1>Criar Pergunta</h1>
             <div className="barraLogo">
-                <span className="barraEsquerda"><hr /></span><MessageCircleMore size={50}/><span className="barraDireita"><hr /></span>
+    <svg width="0" height="0">
+        <defs>
+          <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#7c3aed" />
+            <stop offset="100%" stopColor="#06b6d4" />
+          </linearGradient>
+        </defs>
+    </svg>
+                <span className="barraEsquerda"><hr /></span><MessageCircleMore size={50} stroke="url(#grad)"/><span className="barraDireita"><hr /></span>
             </div>
             <div className="criarPergunta-entrada">
                 <input type="text" placeholder="insira o Titulo" value={titulo} onChange={e => setTitulo(e.target.value)}/> <br />
