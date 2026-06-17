@@ -2,7 +2,10 @@
   display: flex;
   width: 100vw;
   min-height: 100vh; 
-  background-color: #15163F;
+  background: url("./../assets/background/backgroundGeral.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .tudo-comunidade > :first-child {

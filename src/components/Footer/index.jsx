@@ -32,7 +32,7 @@ export default function Footer() {
             <div className="patriocinadores">
                 <h3>Patriocinadores</h3>
                 <div className="patriocinadoresIcon">
-                    <a  href="https://animeprofile.com.br/" target="_blank"><img src={animeProfile} alt="anime Profile" /></a>
+                    <a  href="https://comunidade.animeprofile.com.br/" target="_blank"><img src={animeProfile} alt="anime Profile" /></a>
                     <a href="https://www.instagram.com/eeepdeputadorobertomesquita/" target="_blank"><img src={logoEp} alt="logoEp DRM" /></a>
                 </div>
             </div>

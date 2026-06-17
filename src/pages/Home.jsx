@@ -164,8 +164,10 @@ export default function Home(){
 
         {posts.map((item, index) =>(
           <div key={index} className="perguntas-home">
-          <PostComunidade user={item.user} titulo={item.titulo} conteudo={item.description} imgs={item.imagens} avatar={item.avatar}/> <br />
-          <PostRespostas id={item.id} curtida={item.curtidas}/> 
+            <div className="postContainer">
+              <PostComunidade user={item.user} titulo={item.titulo} conteudo={item.description} imgs={item.imagens} avatar={item.avatar}/> <br />
+              <PostRespostas id={item.id} curtida={item.curtidas}/>
+            </div> 
           </div>
         ))}
 
