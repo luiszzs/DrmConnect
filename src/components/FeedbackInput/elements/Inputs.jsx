@@ -7,7 +7,7 @@ export default function Inputs({funcaoTitulo, estadoTitulo, funcaoDescricao, esa
             </div>
             <div className="areaDoTextarea">
                 <label>Deixe seu comentário</label>
-                <textarea value={esatadoDescricao} placeholder="O que podemos melhorar" style={{width:"390px", height: "200px"}} onChange={e => funcaoDescricao(e.target.value)}></textarea>
+                <textarea value={esatadoDescricao} placeholder="O que podemos melhorar" onChange={e => funcaoDescricao(e.target.value)}></textarea>
             </div>
         </div>
         </>

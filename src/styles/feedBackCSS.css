@@ -104,14 +104,15 @@
 
 .inputsFeedback input {
   padding: 15px 15px;
+  width: 390px;
   border: white;
   border-radius: 10px;
-  width: 350px;
   background-color: #060f1e;
 }
 
 .inputsFeedback textarea{
-  width: 350px;
+  width:390px; 
+  height:200px;
   padding: 10px 30px;
   background-color: #060f1e;
   border: none;
@@ -211,4 +212,23 @@
 
 .experienciaUsuario h3{
   line-height: 1.3;
+}
+
+@media (max-width: 768px){
+  .cardFeedback{
+    width: 400px;
+  }
+  .telaFeedback{
+    margin: 14px 10px;
+  }
+  .inputsFeedback textarea{
+    width: 200px;
+  }
+  .experienciaUsuario{
+    margin: 14px 40px;
+    width: 20rem;
+  }
+  .areaDoTexto{
+    width: 350px;
+  }
 }
