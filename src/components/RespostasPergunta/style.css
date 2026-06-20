@@ -1,29 +1,28 @@
 .respostas-tudo {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
 }
 
 .respostas-enviar {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    margin-top: 30px
+    margin-top: 30px;
 }
 
 .respostas-enviar input {
     display: flex;
     border-radius: 10px;
-    height: 80px;
-    width: 700px;
-    padding-left: 20px;
+    padding: 5px;
+    height: 60px;
+    width: 100%;
     background-color: rgba(22, 25, 78, 0.466);
     border: none;
     color: white;
+    word-break: break-all;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
-
-
  
 .respostas-enviar button {
     border-radius: 20px;
@@ -42,3 +41,4 @@
     justify-content: center;
     align-items: center;
 }
+
