@@ -61,7 +61,8 @@ export default function CriarPergunta(){
             <div className="criarPergunta-entrada">
                 <input type="text" placeholder="insira o Titulo" value={titulo} onChange={e => setTitulo(e.target.value)}/> <br />
                 <textarea maxLength={200} ref={textareaRef} value={descricao} onChange={e => setDescricao(e.target.value)} placeholder="O que você está pensando hoje?"></textarea>
-             <button onClick={() => criarPergunta()}>Enviar Pergunta</button>
+             <button onClick={() => criarPergunta()}>Enviar Pergunta</button> <br />
+             <button onClick={() => irPara("/perguntas")}>Voltar</button>
             </div>
     </div>
     )
